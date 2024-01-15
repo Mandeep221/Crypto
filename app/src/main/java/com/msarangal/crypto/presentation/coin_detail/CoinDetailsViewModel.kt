@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.msarangal.crypto.common.Constants.PARAM_COIN_ID
 import com.msarangal.crypto.common.Resource
 import com.msarangal.crypto.domain.use_case.get_coin.GetCoinDetailsUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
@@ -16,6 +17,7 @@ import javax.inject.Inject
 @Param [savedStateHandle] kind of a bundle that contains state, if a viewModel needs to be resumed after process death
 Cool thing is that it also contains Navigation parameters that are passed inside intents from one screen to another.
  */
+@HiltViewModel
 class CoinDetailsViewModel @Inject constructor(
     private val getCoinDetailsUseCase: GetCoinDetailsUseCase,
     savedStateHandle: SavedStateHandle
